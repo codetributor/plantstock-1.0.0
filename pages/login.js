@@ -4,57 +4,12 @@ import GoogleButton from 'react-google-button'
 import { auth, provider } from '../firebase';
 import { signInWithPopup } from 'firebase/auth';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
 
 const Login = ({client}) => {
 
     const [user, loading] = useAuthState(auth)
-
-  // useEffect(() => {
-  // //   async function init() {
-
-  // //     if(user) {
-
-  // //       const doc = {
-  // //         _id: user.uid,
-  // //         email: user.email,
-  // //         uid: user.uid,
-  // //         _type: 'users'
-  // //       }
-
-  // //       await client.connectUser({
-  // //         id: user.uid,
-  // //         name: user.email
-  // //       },
-  // //       client.devToken(user.uid)
-  // //       )
-
-  // //       const sort = [0]
-
-  // //       const filter = { type: 'messaging', members: { $in: ['waZdAAjZvNaFbB4Focyoblp78P12'] && [user.uid]}}
-  // //       const setUp = await client.queryChannels(filter, sort, {
-  // //         watch: true
-  // //       })
-        
-  // //       if(setUp.length == 0) {
-  // //           const channel = await client.channel('messaging', {
-  // //             members: [user.uid, "waZdAAjZvNaFbB4Focyoblp78P12"]
-  // //         })
-  
-  // //         await channel.watch()
-  // //       }
-            
-        
-  // //       userClient.createIfNotExists(doc).then((res) => {
-  // //         console.log(`User was create, document ID  is ${res.id}`)
-  // //       })
-
-  // //     }
-  // //   }
-  // //   init();
-  
-  // // }, [user])
 
     const signIn = () => {
         signInWithPopup(auth, provider)
@@ -66,7 +21,7 @@ const Login = ({client}) => {
              <Container className='bg-primary'>
             <Head>Login</Head>
             <LoginContainer>
-                <Logo src="/cactus/cactus-4.png" />
+                <Logo src='cactus/cactus-4.png' />
                 <Description>When you chat with each other, your plant stays healthy.</Description> 
                 <Description>When you stop chatting, the plant wilts and slowly dies.</Description>
                 <Description>Only when you message again does the plant become healthy again...</Description>
