@@ -60,8 +60,6 @@ const Modal = ({open, onClose, streamClient}) => {
                 level: 4,
                 plantType: type,
                 check3: false,
-                check2: false,
-                check1: false
             })
             await channel.watch();
         })
@@ -123,7 +121,7 @@ const Modal = ({open, onClose, streamClient}) => {
                                 </PlantNameDiv>
                             </PlantDiv>
                             <PlantDiv>
-                            <img src={`/alocasia/alocasia-5.png`} alt="" height={135} width={135}/>
+                            <img src={`/alocasia/alocasia-4.png`} alt="" height={135} width={135}/>
                             <PlantNameDiv>
                             <RadioIcon value="alocasia" name="type" />
                             <p style={{

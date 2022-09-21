@@ -1,12 +1,10 @@
 import Image from "next/image";
 
-const PlantAvatar = ({plantLevel}) => {
-
-    const urlImage = `/cactus/cactus-${plantLevel}.png`
+const PlantAvatar = ({plantLevel, plantType}) => {
 
     return(
         <div>
-            <img src={urlImage} height="30" width="30" alt="cactus" />
+            <img src={`/${plantType}/${plantType}-${plantLevel}.png`} height="100" width="100" alt="plant" />
         </div>
     )
 }

@@ -67,7 +67,7 @@ const CustomList = ({children}) => {
   display: flex;
   position: sticky;
   top: 0;
-  background-color: whitesmoke;
+  background-color: #EFEFEF;
   border-radius: 5px;
   margin-left: 10px;
   margin-right: 10px;

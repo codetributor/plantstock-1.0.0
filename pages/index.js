@@ -43,7 +43,7 @@ export default function Home({streamClient}) {
       <Head>
         <title>Plantstock | A Chat App that Visualizes Relationships</title>
         <meta name="description" content="When two people message, your plant stays Healthy! But when you don’t message the plants slowly wilts and could die. Only when you message again! does the plant become healthy..." />
-        <link rel="icon" href="/cactus-transparent.png" />
+        <link rel="icon" href="/cactus/cactus-4.png" />
       </Head>
       <div>
             <Chat client={streamClient} theme="messaging light">
