@@ -2,9 +2,6 @@ import PlantAvatar from "./PlantAvatar"
 
 const ChannelContainer = ({streamChannel, watchers, recipient, plantLevel, setActiveChannel}) => {
 
-    console.log(plantLevel)
-    console.log(streamChannel.data.check3)
-
     return(
         <div style={{
             width: '100%',

@@ -59,7 +59,7 @@ const Modal = ({open, onClose, streamClient}) => {
                 members: [members.user, members.otherUser],
                 level: 4,
                 plantType: type,
-                check3: false,
+                check: false,
             })
             await channel.watch();
         })
