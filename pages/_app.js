@@ -32,13 +32,14 @@ function MyApp({ Component, pageProps }) {
             image: user.photoURL,
           },
           chatClient.devToken(user.uid)
-          )
+        )
+        
+          setSteamClient(chatClient);
       }
-        setSteamClient(chatClient);
+        
+       
     }
     init();
-
-      // if(streamClient) return () => streamClient.disconnectUser();
 
   }, [user])
 

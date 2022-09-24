@@ -1,6 +1,6 @@
 import PlantAvatar from "./PlantAvatar"
 
-const ChannelContainer = ({streamChannel, watchers, recipient, plantLevel, setActiveChannel}) => {
+const ChannelContainer = ({streamChannel, watchers, recipient, plantLevel, setActiveChannel, activeUnreadHandler}) => {
 
     return(
         <div style={{
@@ -23,7 +23,7 @@ const ChannelContainer = ({streamChannel, watchers, recipient, plantLevel, setAc
           onClick={() => setActiveChannel(streamChannel, watchers)}
           >
             <PlantAvatar 
-            plantLevel={streamChannel.data.level}
+            plantLevel={plantLevel}
             plantType={streamChannel.data.plantType} />
             <p
             style={{
