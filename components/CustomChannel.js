@@ -20,10 +20,12 @@ const CustomChannel = (ChannelPreviewUIComponentProps) => {
 
     const date = new Date().getTime() / 1000;
     const secondsOfLastMessage = moment(streamChannel.state.last_message_at).valueOf() / 1000;
+    const createdAt = moment(streamChannel.data.config.created_at).valueOf() / 1000;
+    const comparedTime = secondsOfLastMessage || createdAt
 
     useEffect(() => {
       let currentLevel = 4
-      let increment = Math.floor((date - secondsOfLastMessage)/60)
+      let increment = Math.floor((date - comparedTime)/60)
     if(increment >= 3) {
           increment = 3;
     }

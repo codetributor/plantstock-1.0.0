@@ -8,6 +8,7 @@ module.exports = {
     extend: {},
     backgroundColor: {
       primary: "#C8DFB2",
+      channel: "#EFEFEF"
     }
   },
   plugins: [],

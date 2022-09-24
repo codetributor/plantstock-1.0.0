@@ -5,7 +5,6 @@ const ChannelContainer = ({streamChannel, watchers, recipient, plantLevel, setAc
     return(
         <div style={{
             width: '100%',
-            backgroundColor: '#EFEFEF',
             marginLeft: '0px',
             marginBottom: '7px',
             borderRadius: '5px',
@@ -21,6 +20,7 @@ const ChannelContainer = ({streamChannel, watchers, recipient, plantLevel, setAc
             justifyContent: 'start',
           }}
           onClick={() => setActiveChannel(streamChannel, watchers)}
+          className="bg-channel ml-1 hover:border-solid hover:border-2 hover:border-green-600"
           >
             <PlantAvatar 
             plantLevel={plantLevel}

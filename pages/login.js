@@ -6,15 +6,17 @@ import { signInWithPopup } from 'firebase/auth';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
+import { SettingsSuggestOutlined, Slideshow } from '@mui/icons-material';
 
 const Login = ({client}) => {
 
     const [user, loading] = useAuthState(auth)
+    const [slide, setSlide] = useState(4)
 
     const signIn = () => {
         signInWithPopup(auth, provider)
         .catch(alert)
-    }
+    }    
 
     return(
         <div>
@@ -22,10 +24,10 @@ const Login = ({client}) => {
              <Head>
             <title>Plantstock | A Chat App that Visualizes Relationships</title>
             <meta name="description" content="When two people message, your plant stays Healthy! But when you don’t message the plants slowly wilts and could die. Only when you message again! does the plant become healthy..." />
-            <link rel="icon" href="/cactus/cactus-4.png" />
+            <link rel="icon" href={`/cactus/cactus-4.png`} />
             </Head>
             <LoginContainer>
-                <Logo src='cactus/cactus-4.png' />
+                <Logo src={`cactus/cactus-${slide}.png`}/>
                 <Description>When you chat with each other, your plant stays healthy.</Description> 
                 <Description>When you stop chatting, the plant wilts and slowly dies.</Description>
                 <Description>Only when you message again does the plant become healthy again...</Description>

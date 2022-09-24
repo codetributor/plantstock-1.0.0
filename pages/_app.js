@@ -35,8 +35,19 @@ function MyApp({ Component, pageProps }) {
         )
         
           setSteamClient(chatClient);
-      }
+
+          const filter = { $and: [ { members: { $in: [user.uid]}}, { members: { $in: ['waZdAAjZvNaFbB4Focyoblp78P12']} } ] }
         
+          const channels = await chatClient.queryChannels(filter);
+
+          if(channels.length == 0) {
+            const channel = await chatClient.channel('messaging', {
+              members: [user.uid, 'waZdAAjZvNaFbB4Focyoblp78P12']
+            })
+            channel.watch();
+          }
+          
+      }
        
     }
     init();
